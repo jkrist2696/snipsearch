@@ -12,8 +12,6 @@ Created on Sun Jul  2 12:18:08 2023
 # twine upload dist/*
 
 from setuptools import find_packages, setup
-from os import remove
-from subprocess import check_output, STDOUT
 from pipreqs.pipreqs import get_all_imports, get_pkg_names, get_import_local
 
 # PARAMETERS
@@ -28,7 +26,7 @@ with open("README.md", "r", encoding="utf-8") as readme:
 imports = get_all_imports(f"./src/{NAME}")
 pkgnames = get_pkg_names(imports)
 pkgdicts = get_import_local(pkgnames)
-pkglist = [pkgdict["name"]+"=="+pkgdict["version"] for pkgdict in pkgdicts]
+pkglist = [pkgdict["name"] + "==" + pkgdict["version"] for pkgdict in pkgdicts]
 
 setup(
     name=NAME,
