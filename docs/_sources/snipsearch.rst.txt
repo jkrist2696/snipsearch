@@ -1,0 +1,26 @@
+snipsearch package
+==================
+
+.. automodule:: snipsearch
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Submodules
+----------
+
+snipsearch.cli module
+---------------------
+
+.. automodule:: snipsearch.cli
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+snipsearch.helper module
+------------------------
+
+.. automodule:: snipsearch.helper
+   :members:
+   :undoc-members:
+   :show-inheritance:

@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="English" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>snipsearch package &mdash; snipsearch 0.0.1 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Welcome to snipsearch&#39;s documentation!" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            snipsearch
+          </a>
+              <div class="version">
+                0.0.1
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">snipsearch package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#snipsearch.findall_pernewline"><code class="docutils literal notranslate"><span class="pre">findall_pernewline()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#snipsearch.findall_snips"><code class="docutils literal notranslate"><span class="pre">findall_snips()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#snipsearch.get_result_str"><code class="docutils literal notranslate"><span class="pre">get_result_str()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#snipsearch.search_all_pyfiles"><code class="docutils literal notranslate"><span class="pre">search_all_pyfiles()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-snipsearch.cli">snipsearch.cli module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#snipsearch.cli.main"><code class="docutils literal notranslate"><span class="pre">main()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#module-snipsearch.helper">snipsearch.helper module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#snipsearch.helper.find_files"><code class="docutils literal notranslate"><span class="pre">find_files()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#snipsearch.helper.findall_infile"><code class="docutils literal notranslate"><span class="pre">findall_infile()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#snipsearch.helper.format_header"><code class="docutils literal notranslate"><span class="pre">format_header()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#snipsearch.helper.round_sigfig"><code class="docutils literal notranslate"><span class="pre">round_sigfig()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">snipsearch</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">snipsearch package</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/snipsearch.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="module-snipsearch">
+<span id="snipsearch-package"></span><h1>snipsearch package<a class="headerlink" href="#module-snipsearch" title="Permalink to this heading"></a></h1>
+<p>Created on Sun Jul  2 12:18:08 2023</p>
+<p>&#64;author: jkris</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="snipsearch.findall_pernewline">
+<span class="sig-prename descclassname"><span class="pre">snipsearch.</span></span><span class="sig-name descname"><span class="pre">findall_pernewline</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">regex</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">text</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filepath</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span></span></span><a class="reference internal" href="_modules/snipsearch.html#findall_pernewline"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#snipsearch.findall_pernewline" title="Permalink to this definition"></a></dt>
+<dd><p>Run re.findall function and find the number of newlines.
+Calculate a score as number of regex found divided by
+number of newlines found.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>regex</strong> (<em>str</em>) -- Regular expression</p></li>
+<li><p><strong>text</strong> (<em>str</em>) -- Text to search through</p></li>
+<li><p><strong>filepath</strong> (<em>str</em>) -- Full path to file text originated in</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>result</strong> -- Regex search result each with keys:
+[&quot;text&quot;,&quot;path&quot;,&quot;strings&quot;,&quot;string_num&quot;,&quot;newline_num&quot;,&quot;score&quot;]</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="snipsearch.findall_snips">
+<span class="sig-prename descclassname"><span class="pre">snipsearch.</span></span><span class="sig-name descname"><span class="pre">findall_snips</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">regex</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filepath</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">check_exist</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span></span></span><a class="reference internal" href="_modules/snipsearch.html#findall_snips"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#snipsearch.findall_snips" title="Permalink to this definition"></a></dt>
+<dd><p>Open ascii file for reading and get results of re.findall</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>regex</strong> (<em>str</em>) -- Regular expression</p></li>
+<li><p><strong>filepath</strong> (<em>str</em>) -- Path of ascii text file to search</p></li>
+<li><p><strong>check_exist</strong> (<em>bool</em>) -- True to return empty list if file does not exist</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>snips</strong> -- Results from re.findall function</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="snipsearch.get_result_str">
+<span class="sig-prename descclassname"><span class="pre">snipsearch.</span></span><span class="sig-name descname"><span class="pre">get_result_str</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ordered_search_results</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">dict</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">number</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">5</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference internal" href="_modules/snipsearch.html#get_result_str"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#snipsearch.get_result_str" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ordered_search_results</strong> (<em>list</em><em>[</em><em>dict</em><em>]</em>) -- search result dictionaries ordered by score</p></li>
+<li><p><strong>number</strong> (<em>int</em>) -- Default = 5
+Number of results to add to output string</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>outstr</strong> -- All output results converted to string, concatenated, and output in a
+specific format.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="snipsearch.search_all_pyfiles">
+<span class="sig-prename descclassname"><span class="pre">snipsearch.</span></span><span class="sig-name descname"><span class="pre">search_all_pyfiles</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">searchpath</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">searchlist</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">dict</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="_modules/snipsearch.html#search_all_pyfiles"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#snipsearch.search_all_pyfiles" title="Permalink to this definition"></a></dt>
+<dd><p>Search for all strings in searchlist in every Python file
+found in the nested directories of searchpath. Each .py files is divided
+into code snippets before being searched (functions, classes). A similarity score
+is calculated by finding the number of strings found divided by the number
+of newlines in the code snippet.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>searchpath</strong> (<em>str</em>) -- Full path containing some .py files in nested folders</p></li>
+<li><p><strong>searchlist</strong> (<em>list</em><em>[</em><em>str</em><em>]</em>) -- List of strings to search within files</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>ordered_search_results</strong> -- List of Regex search results each with keys:
+[&quot;text&quot;,&quot;path&quot;,&quot;strings&quot;,&quot;string_num&quot;,&quot;newline_num&quot;,&quot;score&quot;]</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>list[dict]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this heading"></a></h2>
+</section>
+<section id="module-snipsearch.cli">
+<span id="snipsearch-cli-module"></span><h2>snipsearch.cli module<a class="headerlink" href="#module-snipsearch.cli" title="Permalink to this heading"></a></h2>
+<p>Created on Sun Jul  2 12:18:08 2023</p>
+<p>&#64;author: jkris</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="snipsearch.cli.main">
+<span class="sig-prename descclassname"><span class="pre">snipsearch.cli.</span></span><span class="sig-name descname"><span class="pre">main</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/snipsearch/cli.html#main"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#snipsearch.cli.main" title="Permalink to this definition"></a></dt>
+<dd><p>Run full command line process</p>
+</dd></dl>
+
+</section>
+<section id="module-snipsearch.helper">
+<span id="snipsearch-helper-module"></span><h2>snipsearch.helper module<a class="headerlink" href="#module-snipsearch.helper" title="Permalink to this heading"></a></h2>
+<p>Created on Sun Jul  2 12:18:08 2023</p>
+<p>&#64;author: jkris</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="snipsearch.helper.find_files">
+<span class="sig-prename descclassname"><span class="pre">snipsearch.helper.</span></span><span class="sig-name descname"><span class="pre">find_files</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">searchpath</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ext</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'.py'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">skip_hidden</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="_modules/snipsearch/helper.html#find_files"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#snipsearch.helper.find_files" title="Permalink to this definition"></a></dt>
+<dd><p>Find all files in searchpath with a certain extension.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>searchpath</strong> (<em>str</em>) -- Full path to search all nested directories for files</p></li>
+<li><p><strong>ext</strong> (<em>str</em>) -- Extension of files to find</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p><strong>pathlist</strong> (<em>list[str]</em>) -- Directories where files were found</p></li>
+<li><p><strong>filelist</strong> (<em>list[str]]</em>) -- All files found with given extension</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="snipsearch.helper.findall_infile">
+<span class="sig-prename descclassname"><span class="pre">snipsearch.helper.</span></span><span class="sig-name descname"><span class="pre">findall_infile</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">regex</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filepath</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">check_exist</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span></span></span><a class="reference internal" href="_modules/snipsearch/helper.html#findall_infile"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#snipsearch.helper.findall_infile" title="Permalink to this definition"></a></dt>
+<dd><p>Open ascii file for reading and get results of re.findall</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>regex</strong> (<em>str</em>) -- Regular expression</p></li>
+<li><p><strong>filepath</strong> (<em>str</em>) -- Path of ascii text file to search</p></li>
+<li><p><strong>check_exist</strong> (<em>bool</em>) -- True to return empty list if file does not exist</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>results</strong> -- Results from re.findall function</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="snipsearch.helper.format_header">
+<span class="sig-prename descclassname"><span class="pre">snipsearch.helper.</span></span><span class="sig-name descname"><span class="pre">format_header</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">repeat_char</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'-'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">linelen</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">68</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference internal" href="_modules/snipsearch/helper.html#format_header"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#snipsearch.helper.format_header" title="Permalink to this definition"></a></dt>
+<dd><p>Format a string header for printing or logging.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>name</strong> (<em>str</em>) -- String to include in middle of header</p></li>
+<li><p><strong>repeat_char</strong> (<em>str</em>) -- Character to repeat before and after name</p></li>
+<li><p><strong>linelen</strong> (<em>int</em>) -- Total length of string to create</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>header</strong> -- Full line string with name between repeated characters</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="snipsearch.helper.round_sigfig">
+<span class="sig-prename descclassname"><span class="pre">snipsearch.helper.</span></span><span class="sig-name descname"><span class="pre">round_sigfig</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">number</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sigfig</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">int</span></span></span><a class="reference internal" href="_modules/snipsearch/helper.html#round_sigfig"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#snipsearch.helper.round_sigfig" title="Permalink to this definition"></a></dt>
+<dd><p>Round a number to a certain number of significant figures.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>number</strong> (<em>Union</em><em>[</em><em>float</em><em>, </em><em>int</em><em>]</em>) -- Arbitrary number to round</p></li>
+<li><p><strong>sigfig</strong> (<em>int</em>) -- Number of significant digits</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>Union[float, int]</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="index.html" class="btn btn-neutral float-left" title="Welcome to snipsearch&#39;s documentation!" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, jkris.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

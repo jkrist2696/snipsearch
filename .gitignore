@@ -1,0 +1,10 @@
+.mypy_cache/
+.vscode/
+build/
+snipsearch.egg-info/
+dist/
+src/snipsearch/__pycache__/
+test/_cleandoc_test.py_working_docs/
+test/.mypy_cache/
+test/cleandoc_log.txt
+docs/conf.txt
