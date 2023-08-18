@@ -12,6 +12,7 @@ Created on Sun Jul  2 12:18:08 2023
 # twine upload dist/*
 
 from os import path
+from pprint import pprint
 from requests import get
 from setuptools import find_packages, setup
 from pipreqs.pipreqs import get_all_imports, get_pkg_names, get_import_local
@@ -29,7 +30,11 @@ kwargs[
     "description"
 ] = "Python package to search multiple strings within Python snippets."
 kwargs["python_requires"] = ">=3.9"
-kwargs["entry_points"] = ({"console_scripts": [f"{pkgname}={pkgname}.cli:main"]},)
+kwargs["entry_points"] = {"console_scripts": [f"{pkgname}={pkgname}:cli_main"]}
+kwargs["install_requires"] = []
+kwargs["packages"] = []  # ["pkg.assets"]
+# kwargs["package_data"] = ({f"{pkgname}": ["assets/*"]},)
+# kwargs["include_package_data"] = True
 
 # Find Latest Version and Add 0.0.1
 VERSION = "0.0.1"
@@ -46,6 +51,15 @@ if "page not found" not in pkgpage and "404" not in pkgpage:
 kwargs["version"] = VERSION
 print(f"\nversion: {kwargs['version']}")
 
+# RUN CLEANDOC HERE WITH CURRENT VERSION
+if __name__ == "__main__":
+    try:
+        from cleandoc import cleandoc_all
+
+        cleandoc_all(path.join(setupdir, "src", pkgname), release=VERSION)
+    except ImportError:
+        print("\n!!!! SKIPPING CLEANDOC CHECK !!!!")
+
 # User README as PyPI home page
 with open("README.md", "r", encoding="utf-8") as readme:
     readme_text = readme.read()
@@ -61,12 +75,14 @@ for pkgdict_orig in pkgdicts_all:
         pkgdicts.append(pkgdict_orig)
 pkglist = [pkgdict["name"] + ">=" + pkgdict["version"] for pkgdict in pkgdicts]
 kwargs["install_requires"].extend(pkglist)
-print(f"\ninstall_requires: {kwargs['install_requires']}\n")
 
 # Find all Packages and Sub-Packages
 packages = find_packages(where="src")
 kwargs["packages"].extend(packages)
-print(f"\npackages: {kwargs['packages']}\n")
+
+print("\nkwargs:")
+pprint(kwargs)
+print("\n")
 
 # Run Setup
 setup(

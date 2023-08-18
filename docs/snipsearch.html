@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>snipsearch package &mdash; snipsearch 0.0.1 documentation</title>
+  <title>snipsearch package &mdash; snipsearch 0.0.2 documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
@@ -19,7 +19,7 @@
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="prev" title="Welcome to snipsearch&#39;s documentation!" href="index.html" /> 
+    <link rel="prev" title="README" href="README.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -34,7 +34,7 @@
             snipsearch
           </a>
               <div class="version">
-                0.0.1
+                0.0.2
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
@@ -46,14 +46,16 @@
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="README.html">README</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">snipsearch package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#snipsearch.cli_main"><code class="docutils literal notranslate"><span class="pre">cli_main()</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="#snipsearch.findall_pernewline"><code class="docutils literal notranslate"><span class="pre">findall_pernewline()</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="#snipsearch.findall_snips"><code class="docutils literal notranslate"><span class="pre">findall_snips()</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="#snipsearch.get_result_str"><code class="docutils literal notranslate"><span class="pre">get_result_str()</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="#snipsearch.search_all_pyfiles"><code class="docutils literal notranslate"><span class="pre">search_all_pyfiles()</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="#submodules">Submodules</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#module-snipsearch.cli">snipsearch.cli module</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#snipsearch.cli.main"><code class="docutils literal notranslate"><span class="pre">main()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#snipsearch.cli.parse"><code class="docutils literal notranslate"><span class="pre">parse()</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#module-snipsearch.helper">snipsearch.helper module</a><ul>
@@ -95,6 +97,12 @@
 <span id="snipsearch-package"></span><h1>snipsearch package<a class="headerlink" href="#module-snipsearch" title="Permalink to this heading"></a></h1>
 <p>Created on Sun Jul  2 12:18:08 2023</p>
 <p>&#64;author: jkris</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="snipsearch.cli_main">
+<span class="sig-prename descclassname"><span class="pre">snipsearch.</span></span><span class="sig-name descname"><span class="pre">cli_main</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/snipsearch.html#cli_main"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#snipsearch.cli_main" title="Permalink to this definition"></a></dt>
+<dd><p>run main cli function</p>
+</dd></dl>
+
 <dl class="py function">
 <dt class="sig sig-object py" id="snipsearch.findall_pernewline">
 <span class="sig-prename descclassname"><span class="pre">snipsearch.</span></span><span class="sig-name descname"><span class="pre">findall_pernewline</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">regex</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">text</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filepath</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span></span></span><a class="reference internal" href="_modules/snipsearch.html#findall_pernewline"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#snipsearch.findall_pernewline" title="Permalink to this definition"></a></dt>
@@ -194,9 +202,9 @@ of newlines in the code snippet.</p>
 <p>Created on Sun Jul  2 12:18:08 2023</p>
 <p>&#64;author: jkris</p>
 <dl class="py function">
-<dt class="sig sig-object py" id="snipsearch.cli.main">
-<span class="sig-prename descclassname"><span class="pre">snipsearch.cli.</span></span><span class="sig-name descname"><span class="pre">main</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/snipsearch/cli.html#main"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#snipsearch.cli.main" title="Permalink to this definition"></a></dt>
-<dd><p>Run full command line process</p>
+<dt class="sig sig-object py" id="snipsearch.cli.parse">
+<span class="sig-prename descclassname"><span class="pre">snipsearch.cli.</span></span><span class="sig-name descname"><span class="pre">parse</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/snipsearch/cli.html#parse"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#snipsearch.cli.parse" title="Permalink to this definition"></a></dt>
+<dd><p>Run command line parsing</p>
 </dd></dl>
 
 </section>
@@ -291,7 +299,7 @@ of newlines in the code snippet.</p>
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="index.html" class="btn btn-neutral float-left" title="Welcome to snipsearch&#39;s documentation!" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="README.html" class="btn btn-neutral float-left" title="README" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
 
   <hr/>

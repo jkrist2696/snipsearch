@@ -3,8 +3,10 @@
 build/
 snipsearch.egg-info/
 dist/
+docs/conf.txt
 src/snipsearch/__pycache__/
-test/_cleandoc_test.py_working_docs/
+test/__pycache__
 test/.mypy_cache/
 test/cleandoc_log.txt
-docs/conf.txt
+cleandoc_log.txt
+run_setup.cmd

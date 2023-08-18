@@ -28,10 +28,6 @@ def main():
     results = test()
     resultstr = ss.get_result_str(results, number=numprint)
     print(resultstr)
-    # run("test()", sort="tottime")
-    # time1 = timeit(test, number=10)
-    # time2 = timeit(test2, number=10)
-    # print(f"\ntime1: {time1}\ntime2: {time2}\n")
 
 
 if __name__ == "__main__":

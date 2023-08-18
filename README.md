@@ -13,16 +13,16 @@ snipsearch [-h] [-n N] searchdir searchterm1 searchterm2 ...
 Find code snippets which are most related to search keywords.
 
 positional arguments:\
-&emsp;searchdir\
-&emsp;&emsp;&emsp;Directory containing Python (.py) files to search through\
-&emsp;searchterms\
-&emsp;&emsp;&emsp;List as many strings as you would like to search for (all equally weighted)
+* searchdir\
+    * Directory containing Python (.py) files to search through\
+* searchterms\
+    * List as many strings as you would like to search for (all equally weighted)
 
 optional arguments:\
-&emsp;-h, --help\
-&emsp;&emsp;&emsp;show this help message and exit\
-&emsp;-n N, -number N\
-&emsp;&emsp;&emsp;Number of code snippet results to print
+* -h, --help\
+    * show this help message and exit\
+* -n N, -number N\
+    * Number of code snippet results to print
 
 ## Read The Docs
 

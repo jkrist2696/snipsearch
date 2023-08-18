@@ -9,6 +9,7 @@ import re
 from os import path, access, R_OK
 from numpy import argsort, flip
 from .helper import format_header, round_sigfig, find_files, findall_infile
+from . import cli
 
 
 def findall_snips(regex: str, filepath: str, check_exist: bool = True) -> list:
@@ -122,7 +123,6 @@ def search_all_pyfiles(searchpath: str, searchlist: list[str]) -> list[dict]:
 
 def get_result_str(ordered_search_results: list[dict], number: int = 5) -> str:
     """
-
     Parameters
     ----------
     ordered_search_results: list[dict]
@@ -130,7 +130,6 @@ def get_result_str(ordered_search_results: list[dict], number: int = 5) -> str:
     number: int
         Default = 5
         Number of results to add to output string
-
     Returns
     -------
     outstr : str
@@ -149,3 +148,12 @@ def get_result_str(ordered_search_results: list[dict], number: int = 5) -> str:
     if len(outstr) == 0:
         outstr = "\nNo Results Found! Try different search keywords.\n"
     return outstr
+
+
+def cli_main():
+    """run main cli function"""
+    args = cli.parse()
+    searchdir, number, searchterms = [args[key] for key in args.keys()]
+    results = search_all_pyfiles(searchdir, searchterms)
+    resultstr = get_result_str(results, number=number)
+    print(resultstr)

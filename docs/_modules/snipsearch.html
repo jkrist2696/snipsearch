@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>snipsearch &mdash; snipsearch 0.0.1 documentation</title>
+  <title>snipsearch &mdash; snipsearch 0.0.2 documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
@@ -32,7 +32,7 @@
             snipsearch
           </a>
               <div class="version">
-                0.0.1
+                0.0.2
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
@@ -44,6 +44,7 @@
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul>
+<li class="toctree-l1"><a class="reference internal" href="../README.html">README</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../snipsearch.html">snipsearch package</a></li>
 </ul>
 
@@ -83,6 +84,7 @@
 <span class="kn">from</span> <span class="nn">os</span> <span class="kn">import</span> <span class="n">path</span><span class="p">,</span> <span class="n">access</span><span class="p">,</span> <span class="n">R_OK</span>
 <span class="kn">from</span> <span class="nn">numpy</span> <span class="kn">import</span> <span class="n">argsort</span><span class="p">,</span> <span class="n">flip</span>
 <span class="kn">from</span> <span class="nn">.helper</span> <span class="kn">import</span> <span class="n">format_header</span><span class="p">,</span> <span class="n">round_sigfig</span><span class="p">,</span> <span class="n">find_files</span><span class="p">,</span> <span class="n">findall_infile</span>
+<span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">cli</span>
 
 
 <div class="viewcode-block" id="findall_snips"><a class="viewcode-back" href="../snipsearch.html#snipsearch.findall_snips">[docs]</a><span class="k">def</span> <span class="nf">findall_snips</span><span class="p">(</span><span class="n">regex</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">filepath</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">check_exist</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">:</span>
@@ -196,7 +198,6 @@
 
 <div class="viewcode-block" id="get_result_str"><a class="viewcode-back" href="../snipsearch.html#snipsearch.get_result_str">[docs]</a><span class="k">def</span> <span class="nf">get_result_str</span><span class="p">(</span><span class="n">ordered_search_results</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">dict</span><span class="p">],</span> <span class="n">number</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">5</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-
 <span class="sd">    Parameters</span>
 <span class="sd">    ----------</span>
 <span class="sd">    ordered_search_results: list[dict]</span>
@@ -204,7 +205,6 @@
 <span class="sd">    number: int</span>
 <span class="sd">        Default = 5</span>
 <span class="sd">        Number of results to add to output string</span>
-
 <span class="sd">    Returns</span>
 <span class="sd">    -------</span>
 <span class="sd">    outstr : str</span>
@@ -223,6 +223,15 @@
     <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">outstr</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
         <span class="n">outstr</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">No Results Found! Try different search keywords.</span><span class="se">\n</span><span class="s2">&quot;</span>
     <span class="k">return</span> <span class="n">outstr</span></div>
+
+
+<div class="viewcode-block" id="cli_main"><a class="viewcode-back" href="../snipsearch.html#snipsearch.cli_main">[docs]</a><span class="k">def</span> <span class="nf">cli_main</span><span class="p">():</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;run main cli function&quot;&quot;&quot;</span>
+    <span class="n">args</span> <span class="o">=</span> <span class="n">cli</span><span class="o">.</span><span class="n">parse</span><span class="p">()</span>
+    <span class="n">searchdir</span><span class="p">,</span> <span class="n">number</span><span class="p">,</span> <span class="n">searchterms</span> <span class="o">=</span> <span class="p">[</span><span class="n">args</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">args</span><span class="o">.</span><span class="n">keys</span><span class="p">()]</span>
+    <span class="n">results</span> <span class="o">=</span> <span class="n">search_all_pyfiles</span><span class="p">(</span><span class="n">searchdir</span><span class="p">,</span> <span class="n">searchterms</span><span class="p">)</span>
+    <span class="n">resultstr</span> <span class="o">=</span> <span class="n">get_result_str</span><span class="p">(</span><span class="n">results</span><span class="p">,</span> <span class="n">number</span><span class="o">=</span><span class="n">number</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">resultstr</span><span class="p">)</span></div>
 </pre></div>
 
            </div>
